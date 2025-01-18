@@ -30,7 +30,7 @@ def play_game():
     player_removed_hand = 0
     while player_removed_hand not in [1, 2]: # This while loop will keep asking the user for a valid hand to remove until they enter a valid hand.
         player_removed_hand = int(input(f"Which hand would you like to remove? 1 ({hands[player_first_hand-1]}), 2 ({hands[player_second_hand-1]}): "))
-    player_remaining_hand = player_first_hand if player_first_hand != player_second_hand else player_second_hand # This will determine which of the player's hands is the remaining hand.
+    player_remaining_hand = player_first_hand if player_first_hand != player_removed_hand else player_second_hand # This will determine which of the player's hands is the remaining hand.
     computer_removed_hand = random.choice([computer_first_hand, computer_second_hand])
     computer_remaining_hand = computer_first_hand if computer_first_hand != computer_removed_hand else computer_second_hand # This will determine which of the computer's hands is the remaining hand.
     print("Player's remaining hand: ", hands[player_remaining_hand-1]) # This will print the remaining hand of the player and computer.
